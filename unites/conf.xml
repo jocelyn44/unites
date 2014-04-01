@@ -1,0 +1,14 @@
+<jocafconverter>
+   	<pan nom="distance">
+    	<unit nom="metre">1</unit>
+    	<unit nom="kilometre">1000</unit>
+    	<unit nom="millimetre">0.001</unit>
+	</pan>
+	<pan nom="vitesse">
+	    
+	</pan>
+	<pan nom="poids">
+	    <unit nom="gramme">1</unit>
+	    <unit nom="kilogramme">1000</unit>
+	</pan>
+</jocafconverter>
