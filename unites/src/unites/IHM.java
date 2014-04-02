@@ -2,6 +2,7 @@ package unites;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Event;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,6 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+import javax.swing.event.CaretListener;
 import javax.swing.text.ElementIterator;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -88,6 +90,10 @@ public class IHM extends JFrame{
 				choixOrigine.insertItemAt(new elemListe(val, name), j);
 				choixDestination.insertItemAt(new elemListe(val, name), j);
 			}
+	    	if(choixOrigine.getItemCount()>0){
+		    	choixOrigine.setSelectedIndex(0);
+		    	choixDestination.setSelectedIndex(0);
+	    	}
 	    	onglet.setLayout(new GridLayout(2,2));
 	    	onglet.add(new JLabel("Origine : "));
 	    	onglet.add(choixOrigine);
@@ -95,12 +101,19 @@ public class IHM extends JFrame{
 	    	onglet.add(choixDestination);
 	    	//on ajoute chaque panneau au tab pannel
 	    	PanOnglets.addTab(pan.getAttribute("nom"), onglet);
-	    	
-	    	
 	    }
+	    
+	    CaretListener caretupdate = new CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent e) {
+                JTextField text = (JTextField)e.getSource();
+                float val= Float.parseFloat(text.getText());
+                resultat.setText(String.valueOf(calcul(val)));
+            }
+        };
 	    
 	    PanOnglets.setVisible(true);
 	    PanOnglets.setSize(100, 100);
+	    entree.addCaretListener(caretupdate);
 	    
 	    this.add(new JLabel("Bienvenu dans cette application de conversion"));
 	    this.add(entree);
@@ -108,9 +121,20 @@ public class IHM extends JFrame{
 	    this.add(resultat);
 	    this.revalidate();
 	    	    
-	    //this.add(resultat);
+	    this.add(resultat);
 	    
 	    this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+	}
+	
+	public float calcul(float entree){
+		float res=0;
+		JPanel panCourant = (JPanel)PanOnglets.getSelectedComponent();// getTabComponentAt(PanOnglets.getSelectedIndex());
+		JComboBox<elemListe> origine = (JComboBox<elemListe>)panCourant.getComponent(1);
+		JComboBox<elemListe> destination = (JComboBox<elemListe>)panCourant.getComponent(3);
+		if(origine.getItemCount()>0)
+			res = entree*(origine.getItemAt(origine.getSelectedIndex()).val / origine.getItemAt(destination.getSelectedIndex()).val);
+		
+		return res;
 	}
 	
 }
