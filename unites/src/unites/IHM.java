@@ -1,32 +1,20 @@
 package unites;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Event;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedList;
 
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.event.CaretListener;
-import javax.swing.text.ElementIterator;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.soap.Node;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -34,6 +22,10 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class IHM extends JFrame{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	JTabbedPane PanOnglets = new JTabbedPane();
 	JTextField resultat = new JTextField (1);
 	JTextField entree = new JTextField(1);
