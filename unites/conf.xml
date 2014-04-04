@@ -2,13 +2,45 @@
    	<pan nom="distance">
     	<unit nom="metre">1</unit>
     	<unit nom="kilometre">1000</unit>
-    	<unit nom="millimetre">0.001</unit>
-	</pan>
+    	<unit nom="centimètre">0.01</unit>
+    	<unit nom="decamètre">10	</unit>
+    	<unit nom="decimètre">0.1</unit>
+    	<unit nom="hectomètre">100</unit>
+    	<unit nom="millimètre">0.001</unit>
+    	<unit nom="pieds">3.28084</unit>
+    	<unit nom="pouces">39.370079</unit>
+    	<unit nom="yard">1.093613</unit>
+    	<unit nom="milles">0.000621</unit>
+    	</pan>
 	<pan nom="vitesse">
-	    
+	    <unit nom="m/s">3.6</unit>
+	    <unit nom="km/h">1</unit>
+	    <unit nom="noeud">1.9</unit>
+	    <unit nom="mile/h">1</unit>
 	</pan>
 	<pan nom="poids">
 	    <unit nom="gramme">1</unit>
 	    <unit nom="kilogramme">1000</unit>
+	    <unit nom="tonne">1000000</unit>
+	</pan>
+	<pan nom="volume">
+	    <unit nom="litre">1</unit>
+	    <unit nom="metre cube">1</unit>
+	</pan>
+	<pan nom="surface">
+	    <unit nom="metre carré">1</unit>
+	    <unit nom="décimetre carré">0.01</unit>
+	    <unit nom="millimetre carré">0.000001</unit>
+	    <unit nom="centimetre carré">0.0001</unit>
+	    <unit nom="hectare">10000</unit>
+	</pan>
+	<pan nom="temps">
+	    <unit nom="seconde">1</unit>
+	    <unit nom="milliseconde">0.001</unit>
+	    <unit nom="minute">60</unit>
+	    <unit nom="heure">3600</unit>
+	    <unit nom="jour">86400</unit>
+	    <unit nom="année">31536000</unit>
+	    <unit nom="siecle">3153600000</unit>
 	</pan>
 </jocafconverter>
